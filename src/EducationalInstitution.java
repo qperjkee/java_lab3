@@ -44,6 +44,15 @@ public class EducationalInstitution {
                 '}';
     }
 
+    public void printDetails() {
+        System.out.println("Institution Name: " + name);
+        System.out.println("Established Year: " + establishedYear);
+        System.out.println("Number of Students: " + numberOfStudents);
+        System.out.println("Rating: " + rating);
+        System.out.println("Location: " + location);
+        System.out.println("-------------------------------");
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
