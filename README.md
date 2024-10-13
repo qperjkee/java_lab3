@@ -1,18 +1,25 @@
-## Getting Started
+# Project Description
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This project defines a class called `EducationalInstitution` that represents various educational institutions. Each institution has attributes such as name, established year, number of students, rating, and location. The project includes functionality to sort these institutions by established year and rating, as well as search for specific institutions within a predefined array.
 
-## Folder Structure
+## Running the Project
 
-The workspace contains two folders by default, where:
+To run the project, follow these steps:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+1. Navigate to the `.\src\` directory:
+    ```bash
+    cd .\src\
+    ```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+2. Run the command to build and execute the program:
+    ```bash
+    .\buildrun.cmd App
+    ```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Description of Actions
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+After running the program, the following actions will be performed:
+- An array of `EducationalInstitution` objects will be created.
+- The institutions will be sorted by established year in ascending order, and the details will be printed.
+- The institutions will then be sorted by rating in descending order, with details printed again.
+- The program will search for specific institutions and output whether each was found, along with its details if applicable.
