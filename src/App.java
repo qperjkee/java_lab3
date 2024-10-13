@@ -11,30 +11,42 @@ public class App {
                 new EducationalInstitution("University E", 1995, 2200, 4.6, "City B")
         };
 
-        Arrays.sort(institutions, Comparator.comparingInt(EducationalInstitution::getEstablishedYear));
-        System.out.println("Sorted by Established Year (Ascending):");
-        for (EducationalInstitution institution : institutions) {
-            institution.printDetails();
+        try {
+            Arrays.sort(institutions, Comparator.comparingInt(EducationalInstitution::getEstablishedYear));
+            System.out.println("Sorted by Established Year (Ascending):");
+            for (EducationalInstitution institution : institutions) {
+                institution.printDetails();
+            }
+        } catch (Exception e) {
+            System.err.println("Error while sorting by established year: " + e.getMessage());
         }
 
-        Arrays.sort(institutions, Comparator.comparingDouble(EducationalInstitution::getRating).reversed());
-        System.out.println("\nSorted by Rating (Descending):");
-        for (EducationalInstitution institution : institutions) {
-            institution.printDetails();
+        try {
+            Arrays.sort(institutions, Comparator.comparingDouble(EducationalInstitution::getRating).reversed());
+            System.out.println("\nSorted by Rating (Descending):");
+            for (EducationalInstitution institution : institutions) {
+                institution.printDetails();
+            }
+        } catch (Exception e) {
+            System.err.println("Error while sorting by rating: " + e.getMessage());
         }
 
         EducationalInstitution[] searchInstitutions = new EducationalInstitution[]{
-            new EducationalInstitution("University A", 1990, 1500, 4.5, "City A"),
-            new EducationalInstitution("University DB", 2010, 1800, 4.8, "City DB"),
-            new EducationalInstitution("University AB", 2020, 1000, 4.0, "City AB")
+                new EducationalInstitution("University A", 1990, 1500, 4.5, "City A"),
+                new EducationalInstitution("University DB", 2010, 1800, 4.8, "City DB"),
+                new EducationalInstitution("University AB", 2020, 1000, 4.0, "City AB")
         };
 
         for (EducationalInstitution searchInstitution : searchInstitutions) {
-            int index = Arrays.asList(institutions).indexOf(searchInstitution);
-            if (index != -1) {
-                System.out.println("\nFound institution: " + institutions[index]);
-            } else {
-                System.out.println("\nInstitution not found: " + searchInstitution.getName());
+            try {
+                int index = Arrays.asList(institutions).indexOf(searchInstitution);
+                if (index != -1) {
+                    System.out.println("\nFound institution: " + institutions[index]);
+                } else {
+                    System.out.println("\nInstitution not found: " + searchInstitution.getName());
+                }
+            } catch (Exception e) {
+                System.err.println("Error while searching for institution: " + searchInstitution.getName() + ". " + e.getMessage());
             }
         }
     }
